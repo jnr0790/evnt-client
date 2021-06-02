@@ -2,9 +2,9 @@
 An application where you can post an event you plan on going to (i.e concert, sporting event, cookout) on a map. When an event is created the location will be pinned on a map which you can click to view the information, delete, or update the event.
 
 ## Links
-- [EVNT API]()
-- [EVNT Client Repository](https://github.com/jnr0790/evnt-client)
 - [EVNT Client]()
+- [EVNT API]()
+- [EVNT API Repository](https://github.com/jnr0790/evnt-api)
 
 
 ## User Stories
