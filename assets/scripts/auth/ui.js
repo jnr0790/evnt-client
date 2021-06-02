@@ -27,8 +27,18 @@ const onSignInSuccess = function (response) {
   $('form').trigger('reset')
 }
 
+const onSignOutSuccess = function (response) {
+  store.user = null
+  $('#message').text('You signed out!')
+  setTimeout(() => {
+    $('#message').text('')
+  }, 2000)
+  $('form').trigger('reset')
+}
+
 module.exports = {
   onError,
   onSignUpSuccess,
-  onSignInSuccess
+  onSignInSuccess,
+  onSignOutSuccess
 }
