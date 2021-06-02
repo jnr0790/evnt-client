@@ -35,8 +35,20 @@ const onSignOut = function (event) {
     .catch(ui.onError)
 }
 
+const onChangePw = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+  const data = getFormFields(form)
+
+  api.changePw(data)
+    .then(ui.onChangePwSuccess)
+    .catch(ui.onError)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
+  onChangePw,
   onSignOut
 }

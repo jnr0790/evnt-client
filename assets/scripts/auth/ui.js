@@ -27,6 +27,14 @@ const onSignInSuccess = function (response) {
   $('form').trigger('reset')
 }
 
+const onChangePwSuccess = function (response) {
+  $('#message').text('You sucessfully changed your password!')
+  setTimeout(() => {
+    $('#message').text('')
+  }, 2000)
+  $('form').trigger('reset')
+}
+
 const onSignOutSuccess = function (response) {
   store.user = null
   $('#message').text('You signed out!')
@@ -40,5 +48,6 @@ module.exports = {
   onError,
   onSignUpSuccess,
   onSignInSuccess,
+  onChangePwSuccess,
   onSignOutSuccess
 }
