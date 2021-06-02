@@ -1,13 +1,34 @@
+const store = require('./../store')
+
+const onError = function () {
+  $('#message').text('Something went wrong, please try again.')
+  setTimeout(() => {
+    $('#message').text('')
+  }, 2000)
+  $('form').trigger('reset')
+}
+
 const onSignUpSuccess = function () {
   $('#message').text('Account was successfully created!')
   setTimeout(() => {
     $('#message').text('')
   }, 2000)
   $('form').trigger('reset')
-  $('#sign-up').hide()
-  $('#sign-in').show()
+}
+
+const onSignInSuccess = function (response) {
+  store.user = response.user
+  const email = store.user.email
+
+  $('#message').text(`${email} is signed in!`)
+  setTimeout(() => {
+    $('#message').text('')
+  }, 2000)
+  $('form').trigger('reset')
 }
 
 module.exports = {
-  onSignUpSuccess
+  onError,
+  onSignUpSuccess,
+  onSignInSuccess
 }
