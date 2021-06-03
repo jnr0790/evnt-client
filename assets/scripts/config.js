@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: '<replace-with-heroku-url>',
+  production: 'https://evnt-api.herokuapp.com',
   development: 'http://localhost:8000'
 }
 

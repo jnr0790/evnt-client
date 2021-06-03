@@ -42,9 +42,21 @@ const createEvent = function (formData) {
   })
 }
 
+const updateEvent = function (id, formData) {
+  return $.ajax({
+    method: 'PATCH',
+    url: `${config.apiUrl}/events/${id}/`,
+    headers: {
+      Authorization: `Token ${store.user.token}`
+    },
+    data: JSON.stringify(formData)
+  })
+}
+
 module.exports = {
   allEvents,
   singleEvent,
   deleteEvent,
-  createEvent
+  createEvent,
+  updateEvent
 }

@@ -48,10 +48,29 @@ const onCreateEvent = function (event) {
     .catch(ui.onError)
 }
 
+const onUpdateEvent = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+  const formData = getFormFields(form)
+  const id = formData.event.id
+
+  api.updateEvent(id, formData)
+    .then(onAllEvents)
+    .then(ui.onUpdateEventSuccess)
+    .catch(ui.onError)
+}
+
+const onUpdateBtn = function (event) {
+
+}
+
 module.exports = {
   onAllEvents,
   onSingleEvent,
   onViewEvent,
   onDeleteEvent,
-  onCreateEvent
+  onCreateEvent,
+  onUpdateEvent,
+  onUpdateBtn
 }
