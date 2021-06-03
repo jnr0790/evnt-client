@@ -19,13 +19,44 @@ const onAllEventsSuccess = function (responseData) {
       <p><span>Date:</span> ${event.date}</p>
       <p><span>Time:</span> ${event.time}</p>
       <p><span>ID:</span> ${event.id}</p>
+
+      <button class='view-event btn' data-id=${event.id}>View</button>
     </div>
     `
   })
   $('#events-display').html(eventsHtml)
 }
 
+const onSingleEventSuccess = function (responseData) {
+  const event = responseData.event
+
+  const eventHtml = `
+  <div id='event-cont'>
+    <p><span>Name:</span> ${event.name}</p>
+    <p><span>Location:</span> ${event.location}</p>
+    <p><span>Date:</span> ${event.date}</p>
+    <p><span>Time:</span> ${event.time}</p>
+    <p><span>ID:</span> ${event.id}</p>
+
+    <button class='delete-event btn' data-id=${event.id}>Delete</button>
+  </div>
+    `
+
+  $('#events-display').html(eventHtml)
+  $('form').trigger('reset')
+}
+
+const onDeleteEventSuccess = function () {
+  $('#message').text('Delete successfully deleted')
+  setTimeout(() => {
+    $('#message').text('')
+  }, 2000)
+  $('form').trigger('reset')
+}
+
 module.exports = {
   onError,
-  onAllEventsSuccess
+  onAllEventsSuccess,
+  onSingleEventSuccess,
+  onDeleteEventSuccess
 }
