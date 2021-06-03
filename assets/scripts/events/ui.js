@@ -18,7 +18,6 @@ const onAllEventsSuccess = function (responseData) {
       <p><span>Location:</span> ${event.location}</p>
       <p><span>Date:</span> ${event.date}</p>
       <p><span>Time:</span> ${event.time}</p>
-      <p><span>ID:</span> ${event.id}</p>
 
       <button class='view-event btn' data-id=${event.id}>View</button>
     </div>
@@ -55,9 +54,17 @@ const onDeleteEventSuccess = function () {
 }
 
 const onCreateEventSuccess = function () {
-  $('#bike-msg').text('A new event was created!')
+  $('#message').text('A new event was created!')
   setTimeout(() => {
-    $('#bike-msg').text('')
+    $('#message').text('')
+  }, 2000)
+  $('form').trigger('reset')
+}
+
+const onUpdateEventSuccess = function () {
+  $('#message').text('Your event was updated!')
+  setTimeout(() => {
+    $('#message').text('')
   }, 2000)
   $('form').trigger('reset')
 }
@@ -67,5 +74,6 @@ module.exports = {
   onAllEventsSuccess,
   onSingleEventSuccess,
   onDeleteEventSuccess,
-  onCreateEventSuccess
+  onCreateEventSuccess,
+  onUpdateEventSuccess
 }
