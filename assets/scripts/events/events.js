@@ -36,9 +36,22 @@ const onDeleteEvent = function (event) {
     .catch(ui.onError)
 }
 
+const onCreateEvent = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+  const formData = getFormFields(form)
+
+  api.createEvent(formData)
+    .then(onAllEvents)
+    .then(ui.onCreateEventSuccess)
+    .catch(ui.onError)
+}
+
 module.exports = {
   onAllEvents,
   onSingleEvent,
   onViewEvent,
-  onDeleteEvent
+  onDeleteEvent,
+  onCreateEvent
 }

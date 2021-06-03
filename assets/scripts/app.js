@@ -19,4 +19,5 @@ $(() => {
   $('#single-event').on('submit', eventEvents.onSingleEvent)
   $('#events-display').on('click', '.view-event', eventEvents.onViewEvent)
   $('#events-display').on('click', '.delete-event', eventEvents.onDeleteEvent)
+  $('#create-event').on('submit', eventEvents.onCreateEvent)
 })

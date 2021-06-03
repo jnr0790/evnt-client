@@ -47,9 +47,17 @@ const onSingleEventSuccess = function (responseData) {
 }
 
 const onDeleteEventSuccess = function () {
-  $('#message').text('Delete successfully deleted')
+  $('#message').text('Event successfully deleted')
   setTimeout(() => {
     $('#message').text('')
+  }, 2000)
+  $('form').trigger('reset')
+}
+
+const onCreateEventSuccess = function () {
+  $('#bike-msg').text('A new event was created!')
+  setTimeout(() => {
+    $('#bike-msg').text('')
   }, 2000)
   $('form').trigger('reset')
 }
@@ -58,5 +66,6 @@ module.exports = {
   onError,
   onAllEventsSuccess,
   onSingleEventSuccess,
-  onDeleteEventSuccess
+  onDeleteEventSuccess,
+  onCreateEventSuccess
 }
