@@ -1,1 +1,56 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Oswald;
+  background-color: #000;
+  color: #fff;
+}
+
+#navbar {
+  background-color: black;
+  border-right: 1px #3d3d3d solid;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 230px;
+  height: 100%;
+  div{
+    border-bottom: 1px #3d3d3d solid;
+  }
+  ul {
+    width: 100%;
+    text-align: center;
+    li {
+      list-style: none;
+      border-top: 1px #3d3d3d solid;
+      font-size: 25px;
+      padding: 10px;
+      &#sign-out {
+        border-bottom: 1px #3d3d3d solid;
+      }
+    }
+  }
+}
+
+main {
+margin-left: 230px;
+text-align: center;
+}
+// #msg-container {
+//   margin: 30px;
+//   margin-bottom: 50px;
+//   position: relative;
+//   position: fixed;
+//   height: 100%;
+//   overflow: auto;
+// }
+// #message {
+//   position: absolute;
+// }
