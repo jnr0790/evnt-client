@@ -11,6 +11,28 @@ const allEvents = function () {
   })
 }
 
+const singleEvent = function (id) {
+  return $.ajax({
+    method: 'GET',
+    url: `${config.apiUrl}/events/${id}/`,
+    headers: {
+      Authorization: `Token ${store.user.token}`
+    }
+  })
+}
+
+const deleteEvent = function (id) {
+  return $.ajax({
+    method: 'DELETE',
+    url: `${config.apiUrl}/events/${id}/`,
+    headers: {
+      Authorization: `Token ${store.user.token}`
+    }
+  })
+}
+
 module.exports = {
-  allEvents
+  allEvents,
+  singleEvent,
+  deleteEvent
 }

@@ -16,4 +16,7 @@ $(() => {
 
   // Event events
   $('#all-events').on('click', eventEvents.onAllEvents)
+  $('#single-event').on('submit', eventEvents.onSingleEvent)
+  $('#events-display').on('click', '.view-event', eventEvents.onViewEvent)
+  $('#events-display').on('click', '.delete-event', eventEvents.onDeleteEvent)
 })
