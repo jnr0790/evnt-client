@@ -31,8 +31,20 @@ const deleteEvent = function (id) {
   })
 }
 
+const createEvent = function (formData) {
+  return $.ajax({
+    method: 'POST',
+    url: `${config.apiUrl}/events/`,
+    headers: {
+      Authorization: `Token ${store.user.token}`
+    },
+    data: JSON.stringify(formData)
+  })
+}
+
 module.exports = {
   allEvents,
   singleEvent,
-  deleteEvent
+  deleteEvent,
+  createEvent
 }
