@@ -23,6 +23,7 @@ const onAllEventsSuccess = function (responseData) {
     </div>
     `
   })
+  $('#events-display').toggle()
   $('#events-display').html(eventsHtml)
 }
 
@@ -36,6 +37,8 @@ const onSingleEventSuccess = function (responseData) {
     <p><span>Date:</span> ${event.date}</p>
     <p><span>Time:</span> ${event.time}</p>
     <p><span>ID:</span> ${event.id}</p>
+
+    <button class='update-btn btn'>Update</button>
 
     <button class='delete-event btn' data-id=${event.id}>Delete</button>
   </div>

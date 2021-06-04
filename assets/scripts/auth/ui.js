@@ -25,6 +25,14 @@ const onSignInSuccess = function (response) {
     $('#message').text('')
   }, 2000)
   $('form').trigger('reset')
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+  $('#sign-out').show()
+  $('#all-events').show()
+  $('#single-event').show()
+  $('#new-event').show()
+  $('#search').show()
+  $('#change-pw-nav').show()
 }
 
 const onChangePwSuccess = function (response) {
@@ -42,6 +50,19 @@ const onSignOutSuccess = function (response) {
     $('#message').text('')
   }, 2000)
   $('form').trigger('reset')
+  $('#search').hide()
+  $('#sign-out').hide()
+  $('#change-pw').hide()
+  $('#all-events').hide()
+  $('#single-event').hide()
+  $('#events-display').empty()
+  $('#events-display').hide()
+  $('#create-event').hide()
+  $('#update-event').hide()
+  $('#new-event').hide()
+  $('#change-pw-nav').hide()
+  $('#sign-up').show()
+  $('#sign-in').show()
 }
 
 module.exports = {
