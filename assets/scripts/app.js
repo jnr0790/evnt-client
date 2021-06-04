@@ -14,6 +14,7 @@ $(() => {
   $('#all-events').hide()
   $('#single-event').hide()
   $('#events-display').hide()
+  $('#headings').hide()
   $('#create-event').hide()
   $('#update-event').hide()
   $('#new-event').hide()

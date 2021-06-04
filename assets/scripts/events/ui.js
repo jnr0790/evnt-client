@@ -10,21 +10,24 @@ const onAllEventsSuccess = function (responseData) {
   const events = responseData.events
 
   let eventsHtml = ''
-
   events.forEach(event => {
     eventsHtml += `
     <div class='event-cont'>
-      <p><span>Name:</span> ${event.name}</p>
-      <p><span>Location:</span> ${event.location}</p>
-      <p><span>Date:</span> ${event.date}</p>
-      <p><span>Time:</span> ${event.time}</p>
+    <p><span>Name:</span> ${event.name}</p>
+    <p><span>Location:</span> ${event.location}</p>
 
-      <button class='view-event btn' data-id=${event.id}>View</button>
+    <button class='view-event btn' data-id=${event.id}>View</button>
     </div>
     `
   })
   $('#events-display').toggle()
-  $('#events-display').html(eventsHtml)
+  $('#headings').toggle()
+  if (eventsHtml === '') {
+    $('#events-display').html('<p>No Events Yet...</p>')
+  } else {
+    $('#headings').html('<h2>All Events</h2>')
+    $('#events-display').html(eventsHtml)
+  }
 }
 
 const onSingleEventSuccess = function (responseData) {
@@ -45,6 +48,13 @@ const onSingleEventSuccess = function (responseData) {
     `
   $('#events-display').show()
   $('#events-display').html(eventHtml)
+  $('#headings').show()
+  $('#headings').html('<h2>Event Details</h2>')
+  $('form').trigger('reset')
+  $('#message').text('Successfully viewing event detail!')
+  setTimeout(() => {
+    $('#message').text('')
+  }, 2000)
   $('form').trigger('reset')
 }
 
@@ -57,7 +67,7 @@ const onDeleteEventSuccess = function () {
 }
 
 const onCreateEventSuccess = function () {
-  $('#message').text('A new event was created!')
+  $('#message').text('A new event was created! View Events to see!')
   setTimeout(() => {
     $('#message').text('')
   }, 2000)
@@ -65,7 +75,7 @@ const onCreateEventSuccess = function () {
 }
 
 const onUpdateEventSuccess = function () {
-  $('#message').text('Your event was updated!')
+  $('#message').text('Your event was updated! View Events to see!')
   setTimeout(() => {
     $('#message').text('')
   }, 2000)
