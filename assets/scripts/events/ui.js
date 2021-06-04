@@ -16,7 +16,7 @@ const onAllEventsSuccess = function (responseData) {
     <p><span>Name:</span> ${event.name}</p>
     <p><span>Location:</span> ${event.location}</p>
 
-    <button class='view-event btn' data-id=${event.id}>View</button>
+    <button class='view-event btn' data-id=${event.id}>View Details</button>
     </div>
     `
   })
