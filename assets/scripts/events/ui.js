@@ -13,7 +13,7 @@ const onAllEventsSuccess = function (responseData) {
 
   events.forEach(event => {
     eventsHtml += `
-    <div id='event-cont'>
+    <div class='event-cont'>
       <p><span>Name:</span> ${event.name}</p>
       <p><span>Location:</span> ${event.location}</p>
       <p><span>Date:</span> ${event.date}</p>
@@ -31,7 +31,7 @@ const onSingleEventSuccess = function (responseData) {
   const event = responseData.event
 
   const eventHtml = `
-  <div id='event-cont'>
+  <div class='event-cont'>
     <p><span>Name:</span> ${event.name}</p>
     <p><span>Location:</span> ${event.location}</p>
     <p><span>Date:</span> ${event.date}</p>
