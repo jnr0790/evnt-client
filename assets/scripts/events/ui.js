@@ -43,7 +43,7 @@ const onSingleEventSuccess = function (responseData) {
     <button class='delete-event btn' data-id=${event.id}>Delete</button>
   </div>
     `
-
+  $('#events-display').show()
   $('#events-display').html(eventHtml)
   $('form').trigger('reset')
 }
