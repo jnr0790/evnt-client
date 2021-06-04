@@ -2,8 +2,10 @@ const store = require('./../store')
 
 const onError = function () {
   $('#message').text('Something went wrong, please try again.')
+  $('#message').addClass('failure')
   setTimeout(() => {
     $('#message').text('')
+    $('#message').removeClass('failure')
   }, 2000)
   $('form').trigger('reset')
 }
