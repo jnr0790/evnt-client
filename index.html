@@ -17,6 +17,12 @@
           <h1><img src="./public/EVNTlogo.png" alt="EVNT"></h1>
 
         <ul class="nav-menu">
+          <li id='single-event'>
+            <form>
+              <input name='event[id]' type='text' placeholder='Search By ID' required>
+              <button class='btn'>Search</button>
+            </form>
+          </li>
           <li id="all-events">View Events</li>
           <li id="create-nav">New Event</li>
           <li id="change-pw-nav">Change Password</li>
@@ -48,11 +54,6 @@
           <input type='password' name='passwords[old]' placeholder='Enter Old Password' required>
           <input type='password' name='passwords[new]' placeholder='Enter New Password' required>
           <button class='btn'>Change Password</button>
-        </form>
-
-        <form id='single-event'>
-          <input name='event[id]' type='text' placeholder='Search for event by ID' required>
-          <button class='btn'>Search</button>
         </form>
 
         <form id='create-event'>

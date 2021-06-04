@@ -10,6 +10,7 @@ body {
   font-family: Oswald;
   background-color: #000;
   color: #fff;
+  font-size: 20px;
 }
 
 #navbar {
@@ -35,22 +36,55 @@ body {
       &#sign-out {
         border-bottom: 1px #3d3d3d solid;
       }
+      &#single-event input {
+        max-width: 200px
+      }
     }
   }
 }
 
+
 main {
-margin-left: 230px;
-text-align: center;
+  margin-left: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-// #msg-container {
-//   margin: 30px;
-//   margin-bottom: 50px;
-//   position: relative;
-//   position: fixed;
-//   height: 100%;
-//   overflow: auto;
-// }
-// #message {
-//   position: absolute;
-// }
+
+main form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 35%;
+  margin-top: 50px;
+}
+input {
+  font-family: Oswald;
+  margin-top: 10px;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.btn {
+  background-color: #EB6200;
+  color: #f4f4f4;
+  margin: 5px;
+  border-radius: 5px;
+  height: 30px;
+  max-width: 500px;
+  text-align: center;
+}
+
+#msg-container {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: 20px;
+  margin-bottom: 50px;
+  position: relative;
+  position: fixed;
+  overflow: auto;
+  &#message {
+    position: absolute;
+  }
+}
