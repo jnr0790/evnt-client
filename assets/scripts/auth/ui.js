@@ -57,6 +57,8 @@ const onSignOutSuccess = function (response) {
   $('#single-event').hide()
   $('#events-display').empty()
   $('#events-display').hide()
+  $('#headings').hide()
+  $('#headings').empty()
   $('#create-event').hide()
   $('#update-event').hide()
   $('#new-event').hide()
