@@ -45,10 +45,16 @@ const onChangePw = function (event) {
     .then(ui.onChangePwSuccess)
     .catch(ui.onError)
 }
+const onChangePwNav = function (event) {
+  $('#change-pw').toggle()
+  $('#create-event').hide()
+  $('#update-event').hide()
+}
 
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePw,
+  onChangePwNav,
   onSignOut
 }

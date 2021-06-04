@@ -48,6 +48,12 @@ const onCreateEvent = function (event) {
     .catch(ui.onError)
 }
 
+const onNewEvent = function (event) {
+  $('#create-event').toggle()
+  $('#change-pw').hide()
+  $('#update-event').hide()
+}
+
 const onUpdateEvent = function (event) {
   event.preventDefault()
 
@@ -62,7 +68,9 @@ const onUpdateEvent = function (event) {
 }
 
 const onUpdateBtn = function (event) {
-
+  $('#update-event').toggle()
+  $('#change-pw').hide()
+  $('#create-event').hide()
 }
 
 module.exports = {
@@ -72,5 +80,6 @@ module.exports = {
   onDeleteEvent,
   onCreateEvent,
   onUpdateEvent,
+  onNewEvent,
   onUpdateBtn
 }
